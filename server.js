@@ -10,6 +10,12 @@ const app = express()
 
 // middleware
 app.use(express.json())
+app.use(
+  cors({
+    origin: ["http://localhost:4000",
+    "https://mern-stack-app-turki.onrender.com"]
+  })
+)
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
